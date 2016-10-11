@@ -8,7 +8,7 @@
  * 2. Start recording a performance profile
  * 3. Play the game
  * 4. Stop profiling and check the Call Tree or Flame Chart for the maleficent
- *
+ *.
  * Got ideas for better bottlenecks or even faster code, file
  * an issue or send us a pull request:
  *   https://github.com/mozilla/devtools-perf-game/issues
@@ -86,13 +86,9 @@ var axes = {
  * @param {Number} value Distance to move
  */
 Utils.moveInDirection = function(direction, value) {
-  Utils.justAnExpensiveLoop();
-  value /= 100;
-  for (var i = 0; i < 100; i++) {
     for (var axis in axes) {
       this[axis] += axes[axis](this.direction) * value;
     }
-  }
 };
 
 /**
